@@ -1,0 +1,82 @@
+.contact {
+    background: url("../img/footer-background.jpg");
+    background-size: cover;
+    color: $color-primary;
+    @at-root &__desc {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    @at-root &__title {
+        padding-bottom: 2rem;
+    }
+    @at-root &__text {
+        font-size: 1.3rem;
+    }
+    @at-root &__wrapper {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    @at-root &__right-side, &__left-side {
+        width: 100%;
+    }
+    /**********LEFT SIDE******************/
+    @at-root &__left-side {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    @at-root &__input {
+        width: 80%;
+        color: $color-secondary;
+        margin-bottom: 1.5rem;
+        padding: .7rem;
+        padding-left: 1rem;
+        font-size: 1.3rem;
+        border: none;
+        outline: none;
+        background: rgba(0, 196, 196, .5);
+        @at-root &::-webkit-input-placeholder {
+            color: $color-secondary;
+        }
+        @at-root &:last-child {
+            margin-bottom: 0;
+        }
+        @at-root &--valid {
+            background: rgb(0, 196, 196);
+            border-left: .5rem solid #355b82;
+            padding-left: .5rem;
+        }
+    }
+    /**********END LEFT SIDE******************/
+
+    /**********RIGHT SIDE******************/
+    @at-root &__address {
+        margin: 0 auto;
+        width: 80%;
+        @at-root & dt {
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding-bottom: .5rem;
+        }
+        @at-root & dd {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            @at-root & a {
+                color: $color-primary;
+            }
+        }   
+    }
+    /**********END RIGHT SIDE******************/
+}
+
+@media #{map-get($breakpoints, sm)} {
+    .contact {
+        @at-root &__left-side, &__right-side {
+            margin: 0 auto;
+            width: 80%;
+        }
+        @at-root &__left-side {
+            margin-bottom: 2rem;
+        }
+    }
+}

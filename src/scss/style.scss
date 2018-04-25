@@ -1,0 +1,39 @@
+/***************IMPORT BASE***************/
+@import "./base/_base.scss";
+/***************END IMPORT BASE***************/ 
+
+/**************IMPORT HEADER*************/
+@import "./modules/_header.scss";
+/**************END IMPORT HEADER*************/
+
+/*************IMPORT WELCOME****************/
+@import "./modules/_welcome.scss";
+/*************END IMPORT WELCOME****************/
+
+/*************IMPORT ABOUT****************/
+@import "./modules/_about.scss";
+/*************END IMPORT ABOUT****************/
+
+/*************IMPORT SERVICES****************/
+@import "./modules/_services.scss";
+/*************END IMPORT SERVICES****************/
+
+/*************IMPORT GALLERY****************/
+@import "./modules/_gallery.scss";
+/*************END IMPORT GALLERY****************/
+
+/*************IMPORT SUBSCRIBE****************/
+@import "./modules/_subscribe.scss";
+/*************END IMPORT SUBSCRIBE****************/
+
+/*************IMPORT BLOG****************/
+@import "./modules/_blog.scss";
+/*************END IMPORT BLOG****************/
+
+/*************IMPORT CONTACT****************/
+@import "./modules/_contact.scss";
+/*************END IMPORT CONTACT****************/
+
+/*************IMPORT FOOTER****************/
+@import "./modules/_footer.scss";
+/*************END IMPORT FOOTER****************/

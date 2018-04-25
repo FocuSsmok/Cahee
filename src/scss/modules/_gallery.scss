@@ -1,0 +1,105 @@
+.gallery {
+    background: #ffe92f;
+    @at-root &__container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2.5rem 0;
+        text-align: center;
+    }
+    @at-root &__desc {
+        color: $color-primary;
+        text-align: center;
+    }
+    @at-root &__title {
+        font-size: 3.5rem;
+        padding-bottom: 2rem;
+    }
+    @at-root &__text {
+        font-size: 1.3rem;
+        padding-bottom: 2rem;
+    }
+    @at-root &__img-box {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+        @at-root &--last {
+            margin-bottom: 0;
+        }
+    }
+    @at-root &__img {
+        width: 100%;
+        box-shadow: 0px 0px 15px 1px rgba(119,119,119,1);
+    }
+}
+
+.button {
+
+    @at-root &--more {
+        display: inline-block;
+        margin: 3rem auto 0 auto;
+        margin-top: 3rem;
+        background: #5585a2; 
+        box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.7);
+    }
+}
+
+@media #{map-get($breakpoints, sm)} {
+    .gallery {
+        @at-root &__img {
+            width: 80%;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, md)} {
+    .gallery {
+        @at-root &__wrapper {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+        @at-root &__top-wrapper, &__bottom-wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        @at-root &__top-wrapper-left-side {
+            width: 70%;
+            margin-bottom: 2rem;
+            padding-right: 2rem;
+        }
+        @at-root &__top-wrapper-left-side &__img-box {
+            height: 100%;
+        }
+        @at-root &__top-wrapper-left-side &__img {
+            height: 100%;
+        }
+        @at-root &__top-wrapper-right-side {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            width: 30%;
+            margin-bottom: 2rem;
+        }
+        @at-root &__top-wrapper-right-side &__img-box {
+            height: 50%;
+            margin-bottom: 2rem;
+            @at-root &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @at-root &__top-wrapper-right-side &__img {
+            height: 100%;
+        }
+        @at-root &__img-box {
+            margin-bottom: 0;
+        }
+        @at-root &__img {
+            width: 100%;
+        }
+        @at-root &__bottom-wrapper &__img-box {
+            margin-right: 2rem;
+            @at-root &:last-child {
+                margin-right: 0rem;
+            }
+        }
+    }
+}

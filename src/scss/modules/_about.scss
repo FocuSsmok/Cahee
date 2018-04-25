@@ -1,0 +1,68 @@
+.about {
+    background-color: #00b0b0;
+    color: $color-secondary;
+    @at-root &__container {
+        margin: 0rem auto;
+        width: 80%;
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        padding: 2.5rem 0;
+    }
+    @at-root &__img-box {
+        margin-top: 2rem;
+        width: 100%;
+    }
+    @at-root &__img {
+        width: 100%;
+        filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75));
+        -webkit-filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.75));
+    }
+    @at-root &__desc {
+        width: 100%;
+    }
+    @at-root &__title {
+        text-align: center;
+        font-size: 3.5rem;
+        padding-bottom: 2rem;
+    }
+    @at-root &__text {
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+}
+
+@media #{map-get($breakpoints, sm)} {
+    .about {
+        @at-root &__img-box {
+            text-align: center;
+        }
+        @at-root &__img {
+            width: 80%;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, md)} {
+    .about {
+        @at-root &__container {
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        @at-root &__img-box, &__desc {
+            width: 100%;
+        }
+        @at-root &__img-box {
+            padding-right: 2rem;
+            margin-top: 0;
+        }
+        @at-root &__img {
+            width: 100%;
+        }
+        @at-root &__text {
+            padding-bottom: 1rem;
+            @at-root &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

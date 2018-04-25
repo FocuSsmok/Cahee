@@ -1,0 +1,111 @@
+.services {
+    background-color: #70bfff;
+    @at-root &__container {
+        padding: 2.5rem 0;
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        flex-flow: column-reverse nowrap;
+    }
+    @at-root &__wrapper {
+        position: relative;
+    }
+
+    @at-root &__title {
+        width: 100%;
+        text-align: center;
+        font-size: 3.5rem;
+        color: $color-secondary;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @at-root &__box-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    @at-root &__img {
+        width: 80%;
+    }
+}
+
+.options {
+    margin-top: 2rem;
+    @at-root &__list {
+        list-style-type: none;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    @at-root &__elements {
+        background-color: $color-secondary;
+        margin-bottom: 1.5rem;
+        height: 70px;
+        @at-root &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @at-root &__link {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+
+    @at-root &__text {
+        color: $color-primary;
+        text-align: center;
+        width: 70%;
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+
+    @at-root &__box-img {
+        border-left: 1px solid $color-primary;
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+}
+
+@media #{map-get($breakpoints, sm)} {
+    .services {
+        @at-root &__box-img {
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+
+    .options {
+        @at-root &__list {
+            width: 70%;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, md)} {
+    .services {
+        @at-root &__container {
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        @at-root &__wrapper, .options {
+            width: 50%;
+        }
+        @at-root &__box-img {
+            width: 100%;
+        }
+    }
+    .options {
+        margin-top: 0;
+        @at-root &__list {
+            width: 80%;
+        }
+    }
+}

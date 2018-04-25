@@ -1,0 +1,6 @@
+node_modules/
+src/img-before/
+2.psd
+2.txt
+yarn-error.log
+yarn.lock

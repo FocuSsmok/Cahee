@@ -1,0 +1,83 @@
+.welcome {
+    height: 100vh;
+    background-image: url("../img/background-header.jpg");
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: repeat-x;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-primary;
+    position: relative;
+    @at-root &__wrapper {
+        width: 80%; 
+    }
+    @at-root &__title {
+        font-size: 3.2rem;
+        font-weight: 900;
+        padding-bottom: 1.2rem;
+        width: 70%;
+    }
+    @at-root &__desc {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        text-align: justify;
+        width: 70%;
+    }
+
+    @at-root &__scroll {
+        width: 20px;
+        height: 36px;
+        background: transparent;
+        border: 1.5px solid $color-primary;
+        @include position($position: absolute, $bottom: 30px, $left: 50%);
+        transform: translateX(-50%);
+        border-radius: 50% / 30%;
+        cursor: pointer;
+        @at-root &::after {
+            @include position($left: 50%, $top: 5px);
+            content: '';
+            display: block;
+            height: 8px;
+            width: 1.8px;
+            background: $color-primary;
+            transform: translateX(-50%);
+            transition: top .2s ease-in;
+        }
+        @at-root &--active::after{
+            @include position($left: 50%, $top:21px);
+            transform: translateX(-50%);
+        }
+    }
+    
+}
+
+.button {
+    color: $color-secondary;
+    border: none;
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    text-transform: uppercase;
+    @at-root &--get {
+        margin-top: 1.5rem;
+        background: #ff6033;
+        box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.7);
+    }
+}
+
+@media #{map-get($breakpoints, sm)} {
+    .welcome {
+        @at-root &__desc, &__title {
+            width: 60%;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, md)} {
+    .welcome {
+        @at-root &__desc, &__title {
+            width: 50%;
+        }
+    }
+}
