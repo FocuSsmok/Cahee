@@ -72,11 +72,40 @@
 @media #{map-get($breakpoints, sm)} {
     .contact {
         @at-root &__left-side, &__right-side {
-            margin: 0 auto;
+            // margin: 0 auto;
             width: 80%;
         }
         @at-root &__left-side {
             margin-bottom: 2rem;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, md)} {
+    .contact {
+        @at-root &__container {
+            padding: 7rem 0;
+        }
+        @at-root &__desc {
+            margin-bottom: 4rem;
+        }
+        @at-root &__text {
+            font-size: 1.4rem;
+        }
+        @at-root &__wrapper {
+            flex-flow: row nowrap;
+        }
+        @at-root &__left-side {
+            margin-bottom: 0;
+        }
+        @at-root &__left-side, &__right-side {
+            width: 50%;
+        }
+        @at-root &__address, &__input {
+            width: 100%;
+        }
+        @at-root &__address {
+            padding-left: 4rem;
         }
     }
 }

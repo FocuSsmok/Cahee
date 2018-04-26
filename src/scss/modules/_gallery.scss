@@ -53,6 +53,12 @@
 
 @media #{map-get($breakpoints, md)} {
     .gallery {
+        @at-root &__container {
+            padding: 7rem 0;
+        }
+        @at-root &__text {
+            padding-bottom: 4rem;
+        }
         @at-root &__wrapper {
             display: flex;
             flex-flow: column nowrap;
@@ -101,5 +107,8 @@
                 margin-right: 0rem;
             }
         }
+    }
+    .button--more {
+        margin-top: 4rem;
     }
 }

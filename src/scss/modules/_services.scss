@@ -94,6 +94,7 @@
         @at-root &__container {
             flex-flow: row nowrap;
             align-items: center;
+            padding: 7rem 0;
         }
         @at-root &__wrapper, .options {
             width: 50%;

@@ -65,7 +65,10 @@
 
 @media #{map-get($breakpoints, md)} {
     .header {
-
+        height: 9rem;
+        @at-root &__link {
+            font-size: 3.5rem;
+        }
     }   
     .nav {
         display: block;
@@ -86,7 +89,7 @@
             }
         }
         @at-root &__link {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: bold;
             text-transform: uppercase;
         }

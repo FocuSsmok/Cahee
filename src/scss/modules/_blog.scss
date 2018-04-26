@@ -23,7 +23,8 @@
 
 .article {
     margin: 0 auto;
-    width: 100%;
+    @include size(250px);
+    max-width: 100%;
     color: $color-secondary;
     // padding: 2.5rem;
     margin-bottom: 2rem;
@@ -63,6 +64,7 @@
         text-align: left;
         padding: 0 2.5rem 2.5rem 2.5rem;
         background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(255, 255, 255, 0) 100% );
+        @include position($position: absolute, $bottom: 0, $left: 0);
     }
     @at-root &__title {
         color: $color-secondary;
@@ -112,10 +114,42 @@
 
 @media #{map-get($breakpoints, sm)} {
     .article {
-        width: 70%;
+        @include size($width: 372px, $height: 312px);
     }
 }
 
 @media #{map-get($breakpoints, md)} {
+    .blog {
+        @at-root &__container {
+            padding: 7rem 0;
+        }
+        @at-root &__desc {
+            padding-bottom: 4rem;
+        }
+        @at-root &__articles-wrapper {
+            margin-bottom: 4rem;
+        }
+    }
+}
 
+@media #{map-get($breakpoints, lg)} {
+    .blog {
+        @at-root &__articles-wrapper {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+        }
+    }
+    .article {
+        margin-right: 2rem;
+        @at-root &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+@media #{map-get($breakpoints, xl)} {
+    .article {
+        max-width: 372px;
+    }
 }

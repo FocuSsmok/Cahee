@@ -21,7 +21,7 @@
     }
     @at-root &__desc {
         font-size: 1.4rem;
-        line-height: 1.6rem;
+        line-height: 2.2rem;
         text-align: justify;
         width: 70%;
     }
@@ -78,6 +78,20 @@
     .welcome {
         @at-root &__desc, &__title {
             width: 50%;
+        }
+        @at-root &__title {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+        @at-root &__desc {
+            font-size: 1.8rem;
+        }
+    }
+    .button {
+        max-width: 200px;
+        width: 100%;
+        @at-root &--get {
+            font-size: 1.6rem;
         }
     }
 }
