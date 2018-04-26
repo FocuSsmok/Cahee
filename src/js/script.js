@@ -2,16 +2,29 @@ const scroll = document.querySelector(".welcome__scroll");
 const parentScroll = scroll.parentNode;
 const header = document.querySelector(".header");
 
+
+/************** SCROLL DOWN BUTTON CLICK ****************/
 scroll.addEventListener("click", function(e) {
     this.classList.add("welcome__scroll--active");
     const nextSection = parentScroll.nextElementSibling;
-    window.scroll({
-        left: 0,
-        top: nextSection.offsetTop,
-        behavior: "smooth",
-    });
+    if(document.body.clientWidth >= 768) {
+        window.scroll({
+            left: 0,
+            top: nextSection.offsetTop - 90,
+            behavior: "smooth",
+        });
+    } else {
+        window.scroll({
+            left: 0,
+            top: nextSection.offsetTop - 70,
+            behavior: "smooth",
+        });
+    }
+    
 });
+/************** END SCROLL DOWN BUTTON CLICK ****************/
 
+/*********** STICKY MENU **************************/
 window.addEventListener("scroll", function(e) {
     if(scroll.classList.contains("welcome__scroll--active")) {
         let parentScrollY = parentScroll.nextElementSibling.getBoundingClientRect().y;
@@ -25,3 +38,9 @@ window.addEventListener("scroll", function(e) {
         header.style.backgroundColor = "transparent";
     }
 });
+
+/*********** END STICKY MENU **************************/
+
+/****** SCROLL SMOOTH TO PROPERLY SECTION **************/
+
+/****** END SCROLL SMOOTH TO PROPERLY SECTION **************/

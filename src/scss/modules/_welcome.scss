@@ -96,6 +96,11 @@
     }
 }
 
-@media #{map-get($breakpoints, lg)} {
-    
+@media #{map-get($breakpoints, xl)} {
+    .welcome {
+        background-position-y: center;
+        @at-root &__wrapper {
+            max-width: 1200px;
+        }
+    }
 }
