@@ -1,5 +1,6 @@
 const scroll = document.querySelector(".welcome__scroll");
 const parentScroll = scroll.parentNode;
+const header = document.querySelector(".header");
 
 scroll.addEventListener("click", function(e) {
     this.classList.add("welcome__scroll--active");
@@ -17,5 +18,10 @@ window.addEventListener("scroll", function(e) {
         if(parentScrollY <= 0) {
             scroll.classList.remove("welcome__scroll--active");
         }
+    }
+    if(window.scrollY > 0) {
+        header.style.backgroundColor = "#ffffff";
+    } else {
+        header.style.backgroundColor = "transparent";
     }
 });

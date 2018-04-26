@@ -59,7 +59,11 @@
         @at-root &__img {
             width: 100%;
         }
+        @at-root &__title {
+            font-size: 5rem;
+        }
         @at-root &__text {
+            font-size: 1.8rem;
             padding-bottom: 1rem;
             @at-root &:last-child {
                 padding-bottom: 0;

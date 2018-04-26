@@ -126,6 +126,12 @@
         @at-root &__desc {
             padding-bottom: 4rem;
         }
+        @at-root &__title {
+            font-size: 5rem;
+        }
+        @at-root &__text {
+            font-size: 1.8rem;
+        }
         @at-root &__articles-wrapper {
             margin-bottom: 4rem;
         }

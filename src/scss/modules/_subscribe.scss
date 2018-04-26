@@ -49,6 +49,12 @@
         @at-root &__desc {
             width: 70%;
         }
+        @at-root &__title {
+            font-size: 4rem;
+        }
+        @at-root &__text {
+            font-size: 1.8rem;
+        }
         @at-root &__form {
             width: 90%;
         }

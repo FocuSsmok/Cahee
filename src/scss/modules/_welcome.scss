@@ -31,7 +31,7 @@
         height: 36px;
         background: transparent;
         border: 1.5px solid $color-primary;
-        @include position($position: absolute, $bottom: 30px, $left: 50%);
+        @include position($position: absolute, $bottom: 40px, $left: 50%);
         transform: translateX(-50%);
         border-radius: 50% / 30%;
         cursor: pointer;
@@ -94,4 +94,8 @@
             font-size: 1.6rem;
         }
     }
+}
+
+@media #{map-get($breakpoints, lg)} {
+    
 }

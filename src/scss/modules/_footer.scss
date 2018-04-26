@@ -27,3 +27,17 @@
         color: #ff2b58;
     }
 }
+
+@media #{map-get($breakpoints, md)} {
+    .footer {
+        @at-root &__box {
+            font-size: 1.4rem;
+        }
+        @at-root &__love {
+            font-size: 1.4rem;
+        }
+        @at-root &__link {
+            font-size: 1.8rem;
+        }
+    }
+}
