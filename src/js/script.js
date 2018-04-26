@@ -26,10 +26,19 @@ scroll.addEventListener("click", function(e) {
 
 /*********** STICKY MENU **************************/
 window.addEventListener("scroll", function(e) {
-    if(scroll.classList.contains("welcome__scroll--active")) {
-        let parentScrollY = parentScroll.nextElementSibling.getBoundingClientRect().y;
-        if(parentScrollY <= 0) {
-            scroll.classList.remove("welcome__scroll--active");
+    if(document.body.clientWidth >= 768) {
+        if(scroll.classList.contains("welcome__scroll--active")) {
+            let parentScrollY = parentScroll.nextElementSibling.getBoundingClientRect().y;
+            if(parentScrollY <= 90) {
+                scroll.classList.remove("welcome__scroll--active");
+            }
+        }
+    } else {
+        if(scroll.classList.contains("welcome__scroll--active")) {
+            let parentScrollY = parentScroll.nextElementSibling.getBoundingClientRect().y;
+            if(parentScrollY <= 70) {
+                scroll.classList.remove("welcome__scroll--active");
+            }
         }
     }
     if(window.scrollY > 0) {
