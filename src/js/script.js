@@ -41,11 +41,20 @@ for(let i = 0; i < navEl.length; i++) {
         e.preventDefault();
         let hash = this.hash;
         let offsetTop = document.querySelector(hash).offsetTop;
-        window.scroll({
-            top: offsetTop - 90,
-            left: 0,
-            behavior: 'smooth'
-        });
+        let menuHeight = nav.offsetHeight;
+        if(window.innerWidth < 768) {
+            window.scroll({
+                top: offsetTop - (90 + menuHeight),
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            window.scroll({
+                top: offsetTop - 90,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
         if(history.pushState) {
             history.pushState(null, null, hash);
         } else {
@@ -63,11 +72,21 @@ function detectSection() {
         let idSection = navEl[i].attributes.href.value;
         let thisSectionTopEdge = document.querySelector(idSection).getBoundingClientRect().y;
         let thisSectionBottomEdge = document.querySelector(idSection).getBoundingClientRect().bottom;
-
-        if((header.offsetHeight > thisSectionTopEdge) && (thisSectionBottomEdge > header.offsetHeight)) {
-            activeLink = navEl[i];
-            activeLink.parentElement.classList.add("nav__item--active");
+        let offsetHeader = header.offsetHeight;
+        let offsetNav = nav.offsetHeight; 
+        if(window.innerWidth < 768) {
+            if(((offsetHeader + offsetNav) > thisSectionTopEdge) && (thisSectionBottomEdge > (offsetHeader + offsetNav))) {
+                console.log(header.offsetHeight + nav.offsetHeight);
+                activeLink = navEl[i];
+                activeLink.parentElement.classList.add("nav__item--active");
+            }
+        } else {
+            if((offsetHeader > thisSectionTopEdge) && (thisSectionBottomEdge > offsetHeader)) {
+                activeLink = navEl[i];
+                activeLink.parentElement.classList.add("nav__item--active");
+            }
         }
+        
     }
 }
 
@@ -88,11 +107,12 @@ hamburger.addEventListener("click", function(e){
         nav.firstElementChild.classList.remove("nav__list--fadeOut");
     } else {
         isClicked = false;
-        console.log(nav.style);
         nav.style.display = "block";
         nav.firstElementChild.classList.add("nav__list--fadeOut");
+        hamburger.style.pointerEvents = "none";
         setTimeout(function(){
             nav.style.display = "none";
+            hamburger.style.pointerEvents = "auto";
         }, 300);
     }
 });
