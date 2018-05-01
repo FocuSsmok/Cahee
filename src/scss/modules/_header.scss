@@ -155,6 +155,7 @@
             align-self: center;  
             @at-root &:last-child {
                 margin-right: 0;
+                padding-bottom: .7rem;
             }
             @at-root &--active {
                 padding-bottom: 1rem; 
