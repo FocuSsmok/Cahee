@@ -44,13 +44,13 @@ for(let i = 0; i < navEl.length; i++) {
         let menuHeight = nav.offsetHeight;
         if(window.innerWidth < 768) {
             window.scroll({
-                top: offsetTop - (90 + menuHeight),
+                top: offsetTop - (header.offsetHeight + menuHeight -2),
                 left: 0,
                 behavior: 'smooth'
             });
         } else {
             window.scroll({
-                top: offsetTop - 90,
+                top: offsetTop - header.offsetHeight + 2,
                 left: 0,
                 behavior: 'smooth'
             });
@@ -75,8 +75,7 @@ function detectSection() {
         let offsetHeader = header.offsetHeight;
         let offsetNav = nav.offsetHeight; 
         if(window.innerWidth < 768) {
-            if(((offsetHeader + offsetNav) > thisSectionTopEdge) && (thisSectionBottomEdge > (offsetHeader + offsetNav))) {
-                console.log(header.offsetHeight + nav.offsetHeight);
+            if(((offsetHeader + offsetNav) >= thisSectionTopEdge) && (thisSectionBottomEdge > (offsetHeader + offsetNav))) {
                 activeLink = navEl[i];
                 activeLink.parentElement.classList.add("nav__item--active");
             }
