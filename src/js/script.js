@@ -85,8 +85,12 @@ hamburger.addEventListener("click", function(e){
     if(!isClicked) {
         isClicked = true;
         nav.style.display = "block";
+        nav.firstElementChild.classList.remove("nav__list--fadeOut");
     } else {
         isClicked = false;
+        console.log(nav.style);
+        nav.style.display = "block";
+        nav.firstElementChild.classList.add("nav__list--fadeOut");
         setTimeout(function(){
             nav.style.display = "none";
         }, 300);

@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 1;
     // background: #fff;
-    transition: background-color .3s linear;
+    transition: background-color .3s ease-out;
     @at-root &--background {
         background-color: $color-secondary !important;
     }
@@ -28,7 +28,7 @@
 }
 
 .nav {
-    // display: none;
+        display: none;
         position: absolute;
         width: 100%;
         top: 90px;
@@ -40,9 +40,9 @@
         width: 100%;
         top: 90px;
         left: 0;
+        height: auto;
     }
     @at-root &__list {
-        visibility: hidden;
         opacity: 0;
         background: $color-secondary;
         list-style-type: none;
@@ -51,10 +51,14 @@
         align-items: center;
         justify-content: center;
         padding: 2rem 0;
-        transition: all .3s linear;
+        // transition: all .3s linear;
         @at-root &--active {
-            visibility: visible;
-            opacity: 1;
+            animation: fadeIn .3s ease-out 1 forwards;
+            animation-play-state: running;
+        }
+        @at-root &--fadeOut {
+            animation: fadeOut .3s ease-out 1 backwards;
+            animation-play-state: running;
         }
     }
     @at-root &__item {
@@ -63,6 +67,7 @@
             padding-bottom: 0;
         }
         @at-root &--active {
+            padding-bottom: .8rem; 
             border-top: 3px solid #ff6033;
         }
     }
@@ -86,7 +91,7 @@
         width: 28px;
         background-color: $color-primary;
         position: absolute;
-        transition: all .3s linear;
+        transition: all .3s ease-out;
         &:nth-child(1) {
             left: 0;
             top: 0;
@@ -129,6 +134,8 @@
         background: transparent;
         width: auto;
         height: auto;
+        overflow: visible;
+        // transition-duration: 0ms;
         @at-root &__list {
             visibility: visible;
             opacity: 1;
@@ -137,14 +144,21 @@
             list-style-type: none;
             flex-flow: row nowrap;
             padding: 0;
+            @at-root &--fadeOut {
+                animation: none;
+            }
         }
         @at-root &__item {
             margin-bottom: 0;
             margin-right: 1rem;
-            padding: .7rem 0 !important;
+            padding: .7rem 0;
             align-self: center;  
             @at-root &:last-child {
                 margin-right: 0;
+            }
+            @at-root &--active {
+                padding-bottom: 1rem; 
+                border-top: 3px solid #ff6033;
             }
         }
         @at-root &__link {
@@ -156,4 +170,14 @@
     .hamburger {
         display: none;
     }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+      to { opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from { opacity: 1;}
+      to { opacity: 0;}
 }
