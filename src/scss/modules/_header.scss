@@ -1,11 +1,15 @@
 .header {
-    height: 7rem;
+    height: 9rem;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
     // background: #fff;
+    transition: background-color .3s linear;
+    @at-root &--background {
+        background-color: $color-secondary !important;
+    }
     @at-root &__container {
         height: 100%;
         display: flex;
@@ -24,7 +28,49 @@
 }
 
 .nav {
-    display: none;
+    // display: none;
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+        height: 0;
+    @at-root &--active {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+    }
+    @at-root &__list {
+        visibility: hidden;
+        opacity: 0;
+        background: $color-secondary;
+        list-style-type: none;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        transition: all .3s linear;
+        @at-root &--active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    @at-root &__item {
+        padding: .5rem 0;
+        @at-root &:last-child {
+            padding-bottom: 0;
+        }
+        @at-root &--active {
+            border-top: 3px solid #ff6033;
+        }
+    }
+    @at-root &__link {
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }
 
 .hamburger {
@@ -40,6 +86,7 @@
         width: 28px;
         background-color: $color-primary;
         position: absolute;
+        transition: all .3s linear;
         &:nth-child(1) {
             left: 0;
             top: 0;
@@ -52,6 +99,11 @@
         &:nth-child(3) {
             left: 0;
             bottom: 0;
+        }
+        @at-root &--active {
+            &:nth-child(1) {transform: translateY(11.5px) rotate(45deg);}
+            &:nth-child(2) {opacity: 0;}
+            &:nth-child(3) {transform: translateY(-11.5px) rotate(-45deg);}
         }
     }
 }
@@ -72,21 +124,27 @@
         }
     }   
     .nav {
-        display: block;
+        display: block !important;
+        position: static;
+        background: transparent;
+        width: auto;
+        height: auto;
         @at-root &__list {
+            visibility: visible;
+            opacity: 1;
+            background: transparent;
             display: flex;
             list-style-type: none;
+            flex-flow: row nowrap;
+            padding: 0;
         }
         @at-root &__item {
+            margin-bottom: 0;
             margin-right: 1rem;
-            padding: .7rem 0;
+            padding: .7rem 0 !important;
             align-self: center;  
             @at-root &:last-child {
                 margin-right: 0;
-            }
-            @at-root &--active {
-                padding-bottom: 1rem;
-                border-top: 3px solid #ff6033;
             }
         }
         @at-root &__link {

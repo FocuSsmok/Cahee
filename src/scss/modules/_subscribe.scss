@@ -58,9 +58,13 @@
         @at-root &__form {
             width: 90%;
         }
+        @at-root &__input {
+            font-size: 1.4rem;
+        }
     }
     .button--subscribe {
         max-width: 170px;
         width: 100%;
+        font-size: 1.4rem;
     }
 }
